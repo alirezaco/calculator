@@ -125,9 +125,11 @@ namespace CppCLRWinformsProjekt {
 	private: System::Windows::Forms::Button^ button24;
 	private: System::Windows::Forms::Button^ button26;
 	private: System::Windows::Forms::Button^ button25;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::RadioButton^ radioButton1;
+private: System::Windows::Forms::ComboBox^ cmbType;
+
+
 	private: System::Windows::Forms::TextBox^ txbHistory1;
+private: System::Windows::Forms::ComboBox^ cmbTan;
 
 
 
@@ -173,8 +175,8 @@ namespace CppCLRWinformsProjekt {
 			this->btn2 = (gcnew System::Windows::Forms::Button());
 			this->btn1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->cmbTan = (gcnew System::Windows::Forms::ComboBox());
+			this->cmbType = (gcnew System::Windows::Forms::ComboBox());
 			this->button13 = (gcnew System::Windows::Forms::Button());
 			this->button23 = (gcnew System::Windows::Forms::Button());
 			this->button14 = (gcnew System::Windows::Forms::Button());
@@ -662,8 +664,8 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// groupBox2
 			// 
-			this->groupBox2->Controls->Add(this->radioButton1);
-			this->groupBox2->Controls->Add(this->comboBox1);
+			this->groupBox2->Controls->Add(this->cmbTan);
+			this->groupBox2->Controls->Add(this->cmbType);
 			this->groupBox2->Controls->Add(this->button13);
 			this->groupBox2->Controls->Add(this->button23);
 			this->groupBox2->Controls->Add(this->button14);
@@ -694,28 +696,29 @@ namespace CppCLRWinformsProjekt {
 			this->groupBox2->TabIndex = 5;
 			this->groupBox2->TabStop = false;
 			// 
-			// radioButton1
+			// cmbTan
 			// 
-			this->radioButton1->AutoSize = true;
-			this->radioButton1->Location = System::Drawing::Point(224, 28);
-			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(84, 34);
-			this->radioButton1->TabIndex = 50;
-			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L" cot    ";
-			this->radioButton1->UseVisualStyleBackColor = true;
+			this->cmbTan->BackColor = System::Drawing::Color::Gray;
+			this->cmbTan->FormattingEnabled = true;
+			this->cmbTan->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"tan", L"cot" });
+			this->cmbTan->Location = System::Drawing::Point(223, 24);
+			this->cmbTan->Name = L"cmbTan";
+			this->cmbTan->Size = System::Drawing::Size(85, 38);
+			this->cmbTan->TabIndex = 50;
+			this->cmbTan->Text = L"tan";
+			this->cmbTan->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::cmbTan_SelectedIndexChanged);
 			// 
-			// comboBox1
+			// cmbType
 			// 
-			this->comboBox1->BackColor = System::Drawing::Color::Gray;
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"ARC", L"DARAJE" });
-			this->comboBox1->Location = System::Drawing::Point(13, 24);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(190, 38);
-			this->comboBox1->Sorted = true;
-			this->comboBox1->TabIndex = 49;
-			this->comboBox1->Text = L"ALI";
+			this->cmbType->BackColor = System::Drawing::Color::Gray;
+			this->cmbType->FormattingEnabled = true;
+			this->cmbType->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"DARAJE", L"RADIAN" });
+			this->cmbType->Location = System::Drawing::Point(13, 24);
+			this->cmbType->Name = L"cmbType";
+			this->cmbType->Size = System::Drawing::Size(190, 38);
+			this->cmbType->Sorted = true;
+			this->cmbType->TabIndex = 49;
+			this->cmbType->Text = L"DARAJE";
 			// 
 			// button13
 			// 
@@ -809,6 +812,7 @@ namespace CppCLRWinformsProjekt {
 			this->btnCos->TabIndex = 25;
 			this->btnCos->Text = L"cos";
 			this->btnCos->UseVisualStyleBackColor = false;
+			this->btnCos->Click += gcnew System::EventHandler(this, &Form1::btnCos_Click);
 			// 
 			// button16
 			// 
@@ -839,6 +843,7 @@ namespace CppCLRWinformsProjekt {
 			this->btnTan->TabIndex = 26;
 			this->btnTan->Text = L"tan";
 			this->btnTan->UseVisualStyleBackColor = false;
+			this->btnTan->Click += gcnew System::EventHandler(this, &Form1::btnTan_Click);
 			// 
 			// button17
 			// 
@@ -1108,7 +1113,6 @@ namespace CppCLRWinformsProjekt {
 			this->grHistory->PerformLayout();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox2->ResumeLayout(false);
-			this->groupBox2->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1247,9 +1251,23 @@ private: System::Void btnPow_Click(System::Object^ sender, System::EventArgs^ e)
 	txbShow->Text += "^";
 }
 private: System::Void btnSin_Click(System::Object^ sender, System::EventArgs^ e) {
-	Trigonometry trygon;
-	String^ str = gcnew String(trygon.cot(toStandardString(txbShow->Text), 'd').c_str());
-	txbShow->Text = str;
+	txbShow->Text += "sin(";
+}
+private: System::Void btnCos_Click(System::Object^ sender, System::EventArgs^ e) {
+	txbShow->Text += "cos(";
+}
+private: System::Void btnTan_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	if (cmbTan->Text == "tan")
+	{
+		txbShow->Text += "tan(";
+	}
+	else
+	{
+		txbShow->Text += "cot(";
+	}
+}
+private: System::Void cmbTan_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

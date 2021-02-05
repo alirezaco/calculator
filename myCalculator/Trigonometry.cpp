@@ -8,6 +8,8 @@ using namespace std;
 
 string Trigonometry::sin(string num, char type)
 {
+	MyMath math;
+	num = math.get(num);
 
 	float number = stof(num);
 	number = int(number) % 360;
@@ -32,6 +34,9 @@ string Trigonometry::sin(string num, char type)
 
 string Trigonometry::cos(string num, char type)
 {
+	MyMath math;
+	num = math.get(num);
+
 	float number = stof(num);
 	number = int(number)%360;
 
@@ -63,4 +68,19 @@ string Trigonometry::cot(string num, char type)
 {
 	MyMath math;
 	return math.get(cos(num, type) + "/" + sin(num, type));
+}
+
+string Trigonometry::sinh(string num, char type)
+{
+	MyMath math;
+	num = math.get(num);
+	int sign = 1;
+	if (num[0] == '-')
+	{
+		sign = -1;
+	}
+	string e = "2.718281^";
+	float eTavanX = stof(math.get(e + num  ));
+	float eTavan2x = eTavanX * eTavanX;
+	return to_string((int)((sign * (eTavan2x - 1) / (2 * eTavanX)) * 1000) / 1000.0);
 }

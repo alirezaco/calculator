@@ -32,6 +32,18 @@ string checkOperator::checkOpera(string numbers)
 		numbers = numbers.substr(0, numbers.find("cos")) + trigon.cos(numbers.substr(numbers.find("cos") + 4, end), 'd') + numbers.substr(numbers.find("cos") + 4 + end + 1, numbers.length());
 		return checkOpera(numbers);
 	}
+	if (numbers.find("tan") != -1)
+	{
+		int end = findClose(numbers, numbers.find("tan"));
+		numbers = numbers.substr(0, numbers.find("tan")) + trigon.tan(numbers.substr(numbers.find("tan") + 4, end), 'd') + numbers.substr(numbers.find("tan") + 4 + end + 1, numbers.length());
+		return checkOpera(numbers);
+	}
+	if (numbers.find("cot") != -1)
+	{
+		int end = findClose(numbers, numbers.find("cot"));
+		numbers = numbers.substr(0, numbers.find("cot")) + trigon.cot(numbers.substr(numbers.find("cot") + 4, end), 'd') + numbers.substr(numbers.find("cot") + 4 + end + 1, numbers.length());
+		return checkOpera(numbers);
+	}
 	return math.get(numbers);
 }
 

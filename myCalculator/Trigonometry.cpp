@@ -78,9 +78,49 @@ string Trigonometry::sinh(string num, char type)
 	if (num[0] == '-')
 	{
 		sign = -1;
-	}
+	}/*
+	float number = stof(num);
+	number = int(number) % 360;*/
+
+	/*if (type == 'd')
+	{
+		number = 3.14159265358 * number / 180;
+	}*/
+	/*num = to_string(number);*/
 	string e = "2.718281^";
 	float eTavanX = stof(math.get(e + num  ));
 	float eTavan2x = eTavanX * eTavanX;
-	return to_string((int)((sign * (eTavan2x - 1) / (2 * eTavanX)) * 1000) / 1000.0);
+	return to_string((int)((sign * (eTavan2x - 1) / (2 * eTavanX)) * 100000) / 100000.0);
+}
+
+string Trigonometry::cosh(string num, char type)
+{
+	MyMath math;
+	num = math.get(num);
+	/*float number = stof(num);
+	number = int(number) % 360;
+
+	if (type == 'd')
+	{
+		number = 3.14159265358 * number / 180;
+	}
+	num = to_string(number);*/
+	string e = "2.718281^";
+	float eTavanX = stof(math.get(e + num));
+	float eTavan2x = eTavanX * eTavanX;
+	return to_string((int)(((eTavan2x + 1) / (2 * eTavanX)) * 100000) / 100000.0);
+}
+
+string Trigonometry::tanh(string num, char type)
+{
+	MyMath math;
+	num = math.get(num);
+	return math.get(sinh(num, type) + "/" + cosh(num, type));
+}
+
+string Trigonometry::coth(string num, char type)
+{
+	MyMath math;
+	num = math.get(num);
+	return math.get(cosh(num, type) + "/" + sinh(num, type));
 }

@@ -1,9 +1,13 @@
-﻿  CppCLR_WinformsProjekt.cpp
-C:\alireza\c++\vs\myProject\myCalculator\myCalculator\CppCLR_WinformsProjekt.cpp(1,1): warning C4005: '__CLR_VER': macro redefinition
+﻿  checkOperator.cpp
+C:\alireza\c++\vs\myProject\myCalculator\myCalculator\checkOperator.cpp(1,1): warning C4005: '__CLR_VER': macro redefinition
 C:\alireza\c++\vs\myProject\myCalculator\myCalculator\pch.cpp : message : see previous definition of '__CLR_VER'
-C:\alireza\c++\vs\myProject\myCalculator\myCalculator\CppCLR_WinformsProjekt.cpp(1,1): warning C4651: '/D__CLR_VER=40804220' specified for precompiled header but not for current compile
-C:\alireza\c++\vs\myProject\myCalculator\myCalculator\Form1.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\alireza\c++\vs\myProject\myCalculator\myCalculator\Form1.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\alireza\c++\vs\myProject\myCalculator\myCalculator\Form1.h(1197,9): warning C4101: 'math': unreferenced local variable
+C:\alireza\c++\vs\myProject\myCalculator\myCalculator\checkOperator.cpp(1,1): warning C4651: '/D__CLR_VER=40804220' specified for precompiled header but not for current compile
+C:\alireza\c++\vs\myProject\myCalculator\myCalculator\checkOperator.cpp(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  myFuncs.cpp
+C:\alireza\c++\vs\myProject\myCalculator\myCalculator\checkOperator.cpp(13,24): warning C4018: '<': signed/unsigned mismatch
+C:\alireza\c++\vs\myProject\myCalculator\myCalculator\myFuncs.cpp(1,1): warning C4005: '__CLR_VER': macro redefinition
+C:\alireza\c++\vs\myProject\myCalculator\myCalculator\pch.cpp : message : see previous definition of '__CLR_VER'
+  Generating Code...
+C:\alireza\c++\vs\myProject\myCalculator\myCalculator\myFuncs.cpp(1,1): warning C4651: '/D__CLR_VER=40804220' specified for precompiled header but not for current compile
   AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   myCalculator.vcxproj -> C:\alireza\c++\vs\myProject\myCalculator\Debug\myCalculator.exe

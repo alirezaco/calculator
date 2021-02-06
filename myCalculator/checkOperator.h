@@ -7,6 +7,8 @@ class checkOperator
 private:
 
 	int findClose(string numbers, int index);
+	
+	int findStart(string numbers, int index);
 
 	string checkOpera(string numbers);
 

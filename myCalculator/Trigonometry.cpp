@@ -77,19 +77,12 @@ string Trigonometry::sinh(string num, char type)
 	int sign = 1;
 	if (num[0] == '-')
 	{
+		num.erase(0, 1);
 		sign = -1;
-	}/*
-	float number = stof(num);
-	number = int(number) % 360;*/
-
-	/*if (type == 'd')
-	{
-		number = 3.14159265358 * number / 180;
-	}*/
-	/*num = to_string(number);*/
+	}
 	string e = "2.718281^";
-	float eTavanX = stof(math.get(e + num  ));
-	float eTavan2x = eTavanX * eTavanX;
+	long double eTavanX = stof(math.get(e + num  ));
+	long double eTavan2x = eTavanX * eTavanX;
 	return to_string((int)((sign * (eTavan2x - 1) / (2 * eTavanX)) * 100000) / 100000.0);
 }
 
@@ -97,14 +90,10 @@ string Trigonometry::cosh(string num, char type)
 {
 	MyMath math;
 	num = math.get(num);
-	/*float number = stof(num);
-	number = int(number) % 360;
-
-	if (type == 'd')
+	if (num[0] == '-')
 	{
-		number = 3.14159265358 * number / 180;
+		num.erase(0, 1);
 	}
-	num = to_string(number);*/
 	string e = "2.718281^";
 	float eTavanX = stof(math.get(e + num));
 	float eTavan2x = eTavanX * eTavanX;

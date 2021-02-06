@@ -38,6 +38,9 @@
     <ClInclude Include="checkOperator.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="myFuncs.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinformsProjekt.cpp">
@@ -59,6 +62,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="checkOperator.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="myFuncs.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

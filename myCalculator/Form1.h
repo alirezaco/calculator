@@ -118,11 +118,13 @@ namespace CppCLRWinformsProjekt {
 
 	private: System::Windows::Forms::Button^ button20;
 	private: System::Windows::Forms::Button^ btnSinh;
+	private: System::Windows::Forms::Button^ btnp;
 
-	private: System::Windows::Forms::Button^ button21;
+
 	private: System::Windows::Forms::Button^ btnCosh;
+	private: System::Windows::Forms::Button^ btne;
 
-	private: System::Windows::Forms::Button^ button22;
+
 private: System::Windows::Forms::Button^ btnTanh;
 
 	private: System::Windows::Forms::Button^ button27;
@@ -197,9 +199,9 @@ private: System::Windows::Forms::ComboBox^ cmbTan;
 			this->btnAtan = (gcnew System::Windows::Forms::Button());
 			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->btnSinh = (gcnew System::Windows::Forms::Button());
-			this->button21 = (gcnew System::Windows::Forms::Button());
+			this->btnp = (gcnew System::Windows::Forms::Button());
 			this->btnCosh = (gcnew System::Windows::Forms::Button());
-			this->button22 = (gcnew System::Windows::Forms::Button());
+			this->btne = (gcnew System::Windows::Forms::Button());
 			this->btnTanh = (gcnew System::Windows::Forms::Button());
 			this->button27 = (gcnew System::Windows::Forms::Button());
 			this->button24 = (gcnew System::Windows::Forms::Button());
@@ -687,9 +689,9 @@ private: System::Windows::Forms::ComboBox^ cmbTan;
 			this->groupBox2->Controls->Add(this->btnAtan);
 			this->groupBox2->Controls->Add(this->button20);
 			this->groupBox2->Controls->Add(this->btnSinh);
-			this->groupBox2->Controls->Add(this->button21);
+			this->groupBox2->Controls->Add(this->btnp);
 			this->groupBox2->Controls->Add(this->btnCosh);
-			this->groupBox2->Controls->Add(this->button22);
+			this->groupBox2->Controls->Add(this->btne);
 			this->groupBox2->Controls->Add(this->btnTanh);
 			this->groupBox2->Controls->Add(this->button27);
 			this->groupBox2->Controls->Add(this->button24);
@@ -803,6 +805,7 @@ private: System::Windows::Forms::ComboBox^ cmbTan;
 			this->button15->TabIndex = 45;
 			this->button15->Text = L"n!";
 			this->button15->UseVisualStyleBackColor = false;
+			this->button15->Click += gcnew System::EventHandler(this, &Form1::button15_Click);
 			// 
 			// btnCos
 			// 
@@ -834,6 +837,7 @@ private: System::Windows::Forms::ComboBox^ cmbTan;
 			this->button16->TabIndex = 44;
 			this->button16->Text = L"|x|";
 			this->button16->UseVisualStyleBackColor = false;
+			this->button16->Click += gcnew System::EventHandler(this, &Form1::button16_Click);
 			// 
 			// btnTan
 			// 
@@ -973,21 +977,22 @@ private: System::Windows::Forms::ComboBox^ cmbTan;
 			this->btnSinh->UseVisualStyleBackColor = false;
 			this->btnSinh->Click += gcnew System::EventHandler(this, &Form1::btnSinh_Click);
 			// 
-			// button21
+			// btnp
 			// 
-			this->button21->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->btnp->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->button21->Font = (gcnew System::Drawing::Font(L"NSimSun", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnp->Font = (gcnew System::Drawing::Font(L"NSimSun", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button21->ForeColor = System::Drawing::Color::Black;
-			this->button21->Location = System::Drawing::Point(433, 147);
-			this->button21->Margin = System::Windows::Forms::Padding(10);
-			this->button21->Name = L"button21";
-			this->button21->Padding = System::Windows::Forms::Padding(3);
-			this->button21->Size = System::Drawing::Size(85, 54);
-			this->button21->TabIndex = 39;
-			this->button21->Text = L"π";
-			this->button21->UseVisualStyleBackColor = false;
+			this->btnp->ForeColor = System::Drawing::Color::Black;
+			this->btnp->Location = System::Drawing::Point(433, 147);
+			this->btnp->Margin = System::Windows::Forms::Padding(10);
+			this->btnp->Name = L"btnp";
+			this->btnp->Padding = System::Windows::Forms::Padding(3);
+			this->btnp->Size = System::Drawing::Size(85, 54);
+			this->btnp->TabIndex = 39;
+			this->btnp->Text = L"π";
+			this->btnp->UseVisualStyleBackColor = false;
+			this->btnp->Click += gcnew System::EventHandler(this, &Form1::btnp_Click);
 			// 
 			// btnCosh
 			// 
@@ -1004,21 +1009,22 @@ private: System::Windows::Forms::ComboBox^ cmbTan;
 			this->btnCosh->UseVisualStyleBackColor = false;
 			this->btnCosh->Click += gcnew System::EventHandler(this, &Form1::btnCosh_Click);
 			// 
-			// button22
+			// btne
 			// 
-			this->button22->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			this->btne->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->button22->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btne->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button22->ForeColor = System::Drawing::Color::Black;
-			this->button22->Location = System::Drawing::Point(328, 147);
-			this->button22->Margin = System::Windows::Forms::Padding(10);
-			this->button22->Name = L"button22";
-			this->button22->Padding = System::Windows::Forms::Padding(3);
-			this->button22->Size = System::Drawing::Size(85, 54);
-			this->button22->TabIndex = 38;
-			this->button22->Text = L"e";
-			this->button22->UseVisualStyleBackColor = false;
+			this->btne->ForeColor = System::Drawing::Color::Black;
+			this->btne->Location = System::Drawing::Point(328, 147);
+			this->btne->Margin = System::Windows::Forms::Padding(10);
+			this->btne->Name = L"btne";
+			this->btne->Padding = System::Windows::Forms::Padding(3);
+			this->btne->Size = System::Drawing::Size(85, 54);
+			this->btne->TabIndex = 38;
+			this->btne->Text = L"e";
+			this->btne->UseVisualStyleBackColor = false;
+			this->btne->Click += gcnew System::EventHandler(this, &Form1::btne_Click);
 			// 
 			// btnTanh
 			// 
@@ -1301,6 +1307,18 @@ private: System::Void btnTanh_Click(System::Object^ sender, System::EventArgs^ e
 	{
 		txbShow->Text += "coth(";
 	}
+}
+private: System::Void btne_Click(System::Object^ sender, System::EventArgs^ e) {
+	txbShow->Text += "e";
+}
+private: System::Void btnp_Click(System::Object^ sender, System::EventArgs^ e) {
+	txbShow->Text += "p";
+}
+private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
+	txbShow->Text += "!";
+}
+private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
+	txbShow->Text += "abs(";
 }
 };
 }
